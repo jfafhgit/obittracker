@@ -23,6 +23,7 @@ class User extends Authenticatable
         'email',
         'workos_id',
         'avatar',
+        'area_id',
     ];
 
     /**
@@ -57,5 +58,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function area()
+    {
+        return $this->belongsTo(Area::class);
     }
 }
