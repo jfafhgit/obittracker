@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('workos_id')->unique();
             $table->rememberToken();
             $table->text('avatar');
-            $table->foreignId('area_id')->nullable()->constrained('areas');
+            $table->foreignId('area_id')->default(1)->constrained('areas');
             $table->timestamps();
         });
 
